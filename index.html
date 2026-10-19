@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cardápio Bardock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: coluna única estilo lousa de bar, abas de categoria fixas no topo, itens com pontilhado até o preço */
+:root {
+  --bg: #15171c;
+  --panel: #1d2027;
+  --line: #2c303a;
+  --fg: #ece6d6;
+  --muted: #9c978a;
+  --gold: #e0b452;
+  --gold-ink: #1a1508;
+  --pink: #f06fb0;
+  --font-display: "Alfa Slab One", "Rockwell", Georgia, serif;
+  --font-item: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.45;
+  background-image: radial-gradient(circle at 20% 0%, rgba(224,180,82,.07), transparent 45%);
+  min-height: 100%;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 640px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+header.brand { padding-block: 36px 20px; text-align: center; }
+.brand h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(44px, 13vw, 72px);
+  letter-spacing: .06em;
+  color: var(--gold);
+  margin: 0;
+  line-height: 1;
+}
+.brand p {
+  margin: 10px 0 0;
+  font-family: var(--font-item);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+nav.tabs {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.tabs .wrap {
+  display: flex; gap: 8px; overflow-x: auto; padding-block: 10px;
+  scrollbar-width: none;
+}
+.tabs .wrap::-webkit-scrollbar { display: none; }
+.tabs a {
+  flex: none;
+  font-family: var(--font-item); font-weight: 600; font-size: 14px;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--fg); text-decoration: none;
+  padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.tabs a:hover { border-color: var(--gold); }
+.tabs a.on { background: var(--gold); color: var(--gold-ink); border-color: var(--gold); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+main { padding-block: 8px 40px; display: grid; gap: 34px; }
+section { scroll-margin-top: 70px; }
+.cat-head {
+  display: inline-block;
+  background: var(--fg); color: var(--bg);
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 19px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 6px 16px 5px; margin: 0 0 14px;
+  text-wrap: balance;
+}
+.cat-note { margin: -6px 0 12px; color: var(--muted); font-size: 13px; }
+.sub-head {
+  font-family: var(--font-item); font-weight: 700;
+  color: var(--pink); text-transform: uppercase; letter-spacing: .12em;
+  font-size: 15px; margin: 14px 0 4px;
+}
+ul.items { list-style: none; margin: 0; padding: 0; display: grid; }
+li.item {
+  display: grid; grid-template-columns: auto minmax(24px,1fr) auto;
+  align-items: baseline; gap: 8px;
+  padding-block: 8px;
+}
+.dots { border-bottom: 2px dotted var(--line); transform: translateY(-4px); }
+.name {
+  font-family: var(--font-item); font-weight: 600; font-size: 18px;
+  text-transform: uppercase; letter-spacing: .03em;
+  display: flex; align-items: baseline; gap: 8px; min-width: 0;
+}
+.name small {
+  font-family: var(--font-body); font-weight: 500; text-transform: none;
+  letter-spacing: 0; font-size: 12px; color: var(--muted);
+  white-space: nowrap;
+}
+.price {
+  font-family: var(--font-item); font-weight: 700; font-size: 18px;
+  color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.price .cur { font-size: 12px; font-weight: 600; margin-right: 2px; color: var(--muted); }
+
+footer.note { color: var(--muted); font-size: 12px; text-align: center; padding-block: 0 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (min-width: 560px) { .name { font-size: 19px; } }
+</style>
+</head>
+<body>
+
+<header class="brand">
+  <div class="wrap">
+    <h1>BARDOCK</h1>
+    <p>Cardápio · Bebidas &amp; Narguile</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Categorias">
+  <div class="wrap" id="tabs"></div>
+</nav>
+
+<main class="wrap" id="menu"></main>
+
+<footer class="note wrap">Preços em reais (R$).</footer>
+
+<script>
+const MENU = [
+  { id: "cervejas", title: "Cervejas", items: [
+    ["Skol lata", 5], ["Heineken lata", 7], ["Original lata", 6],
+    ["Long Heineken", 12], ["Long Corona", 13], ["Skol Beats", 15],
+    ["Ice long", 15], ["Draft", 25]
+  ]},
+  { id: "baldes", title: "Baldes", items: [
+    ["Long Heineken", 65, "6 un."], ["Long Corona", 69.9, "6 un."],
+    ["Heineken lata", 55, "8 un."], ["Original lata", 50, "8 un."],
+    ["Skol lata", 45, "8 un."]
+  ]},
+  { id: "drinks", title: "Drinks & Caipirinha", items: [
+    ["Caipirinha de Velho", 20], ["Caipirinha de Smirnoff", 25],
+    ["Caipiroska Velho", 25], ["Caipiroska Smirnoff", 30]
+  ]},
+  { id: "whisky", title: "Whisky & Gins", groups: [
+    { title: null, items: [
+      ["Dose de Jack", 40], ["Dose Cavalo", 35], ["Dose de Red", 35], ["Dose de Black", 50]
+    ]},
+    { title: "Dose gins", items: [
+      ["Gin Tanqueray", 40], ["Gin Beefeater", 40], ["Gin Eternity", 12]
+    ]}
+  ]},
+  { id: "narguile", title: "Narguile", items: [
+    ["Rosh", 25], ["Double Rosh Ter a Qui", 30]
+  ]},
+  { id: "diversos", title: "Diversos", items: [
+    ["Água sem gás", 4], ["Água com gás", 4], ["Coquinha", 4],
+    ["Coca lata", 7], ["Guaraná lata", 7], ["Red Bull", 15], ["Monster", 15]
+  ]}
+];
+
+const brl = v => v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+const menuEl = document.getElementById("menu");
+const tabsEl = document.getElementById("tabs");
+
+function itemRow([name, price, note]) {
+  const li = document.createElement("li");
+  li.className = "item";
+  li.innerHTML = `
+    <span class="name"><span>${name}</span>${note ? `<small>${note}</small>` : ""}</span>
+    <span class="dots" aria-hidden="true"></span>
+    <span class="price"><span class="cur">R$</span>${brl(price)}</span>`;
+  return li;
+}
+
+MENU.forEach((cat, i) => {
+  const a = document.createElement("a");
+  a.href = "#" + cat.id; a.textContent = cat.title; a.dataset.id = cat.id;
+  if (i === 0) a.classList.add("on");
+  tabsEl.appendChild(a);
+
+  const sec = document.createElement("section");
+  sec.id = cat.id;
+  sec.innerHTML = `<h2 class="cat-head">${cat.title}</h2>`;
+  const groups = cat.groups || [{ title: null, items: cat.items }];
+  groups.forEach(g => {
+    if (g.title) {
+      const h = document.createElement("h3");
+      h.className = "sub-head"; h.textContent = g.title;
+      sec.appendChild(h);
+    }
+    const ul = document.createElement("ul");
+    ul.className = "items";
+    g.items.forEach(it => ul.appendChild(itemRow(it)));
+    sec.appendChild(ul);
+  });
+  menuEl.appendChild(sec);
+});
+
+// Aba ativa conforme a rolagem
+const tabs = [...tabsEl.querySelectorAll("a")];
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    tabs.forEach(t => t.classList.toggle("on", t.dataset.id === en.target.id));
+    const on = tabsEl.querySelector("a.on");
+    if (on) tabsEl.scrollTo({ left: on.offsetLeft - 16, behavior: "smooth" });
+  });
+}, { rootMargin: "-80px 0px -65% 0px" });
+document.querySelectorAll("main section").forEach(s => obs.observe(s));
+tabs.forEach(t => t.addEventListener("click", e => {
+  e.preventDefault();
+  document.getElementById(t.dataset.id).scrollIntoView({ behavior: "smooth", block: "start" });
+}));
+
+</script>
+</body>
+</html>
