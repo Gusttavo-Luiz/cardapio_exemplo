@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ilustração de um copo">
+  <rect width="800" height="600" fill="#F6EAD9"/>
+  <ellipse cx="400" cy="490" rx="150" ry="20" fill="#EADFCE"/>
+  <path d="M300 140h200l-24 340a20 20 0 0 1-20 18H344a20 20 0 0 1-20-18z" fill="#FFFFFF" stroke="#EADFCE" stroke-width="6"/>
+  <path d="M312 230h176l-17 248a14 14 0 0 1-14 12H343a14 14 0 0 1-14-12z" fill="#E59A4B"/>
+  <circle cx="380" cy="300" r="10" fill="#FFF8EF" opacity=".7"/><circle cx="420" cy="360" r="8" fill="#FFF8EF" opacity=".7"/><circle cx="395" cy="420" r="6" fill="#FFF8EF" opacity=".7"/>
+  <rect x="430" y="90" width="14" height="200" rx="7" fill="#68734A" transform="rotate(12 437 190)"/>
+  <circle cx="490" cy="230" r="34" fill="#9BB25B" stroke="#68734A" stroke-width="6"/>
+</svg>

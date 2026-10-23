@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ilustração de um prato">
+  <rect width="800" height="600" fill="#F6EAD9"/>
+  <circle cx="400" cy="310" r="215" fill="#FFFFFF"/>
+  <circle cx="400" cy="310" r="170" fill="#FFF8EF" stroke="#EADFCE" stroke-width="6"/>
+  <ellipse cx="335" cy="285" rx="88" ry="62" fill="#FFFFFF" stroke="#EADFCE" stroke-width="4"/>
+  <ellipse cx="470" cy="275" rx="80" ry="58" fill="#5B3A29"/>
+  <circle cx="452" cy="262" r="7" fill="#3D2A20"/><circle cx="488" cy="285" r="7" fill="#3D2A20"/><circle cx="470" cy="248" r="6" fill="#3D2A20"/>
+  <path d="M330 380c40-30 120-30 160 0-20 40-140 40-160 0z" fill="#68734A"/>
+  <path d="M360 372c10-12 30-14 40-4M420 368c12-10 32-8 40 4" stroke="#8C9867" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <rect x="520" y="340" width="70" height="44" rx="12" fill="#B85C38" transform="rotate(-18 555 362)"/>
+</svg>
