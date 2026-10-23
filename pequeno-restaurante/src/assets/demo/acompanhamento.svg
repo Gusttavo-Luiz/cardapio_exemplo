@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ilustração de uma tigela">
+  <rect width="800" height="600" fill="#F6EAD9"/>
+  <ellipse cx="400" cy="470" rx="230" ry="26" fill="#EADFCE"/>
+  <path d="M190 280h420a210 190 0 0 1-420 0z" fill="#B85C38"/>
+  <ellipse cx="400" cy="280" rx="210" ry="40" fill="#E9C98F"/>
+  <circle cx="340" cy="272" r="12" fill="#D9AE63"/><circle cx="400" cy="262" r="12" fill="#D9AE63"/><circle cx="455" cy="276" r="12" fill="#D9AE63"/>
+  <path d="M330 200c-15 15 15 30 0 50M400 190c-15 15 15 30 0 50M470 200c-15 15 15 30 0 50" stroke="#786F67" stroke-width="6" fill="none" stroke-linecap="round" opacity=".5"/>
+</svg>

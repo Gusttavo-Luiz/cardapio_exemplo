@@ -1,0 +1,13 @@
+{
+  "name": "Pequeno Restaurante | Cardápio Digital",
+  "short_name": "Pequeno Restaurante",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FFF8EF",
+  "theme_color": "#FFF8EF",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

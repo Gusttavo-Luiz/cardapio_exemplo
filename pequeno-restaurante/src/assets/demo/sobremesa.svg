@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ilustração de uma sobremesa">
+  <rect width="800" height="600" fill="#F6EAD9"/>
+  <ellipse cx="400" cy="420" rx="230" ry="60" fill="#FFFFFF" stroke="#EADFCE" stroke-width="6"/>
+  <path d="M260 400V300a140 60 0 0 1 280 0v100a140 40 0 0 1-280 0z" fill="#E9B65F"/>
+  <ellipse cx="400" cy="300" rx="140" ry="50" fill="#F2CE85"/>
+  <path d="M262 310c20 30 40 30 60 0s40 30 60 0 40 30 60 0 40 30 60 0 40 30 36 0" fill="none" stroke="#8A4B22" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="400" cy="298" rx="70" ry="22" fill="#8A4B22"/>
+</svg>
