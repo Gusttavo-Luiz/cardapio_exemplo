@@ -126,6 +126,21 @@ li.item {
 
 footer.note { color: var(--muted); font-size: 12px; text-align: center; padding-block: 0 8px; }
 
+.hours {
+  margin: 22px auto 0; max-width: 340px;
+  border: 1px solid var(--line); border-radius: 6px;
+  padding: 12px 16px; text-align: left;
+}
+.hours h2 {
+  margin: 0 0 6px; text-align: center;
+  font-family: var(--font-item); font-weight: 700; font-size: 13px;
+  text-transform: uppercase; letter-spacing: .22em; color: var(--gold);
+}
+.hours dl { margin: 0; display: grid; grid-template-columns: auto auto; gap: 4px 16px; justify-content: space-between; }
+.hours dt { font-family: var(--font-item); font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: .03em; }
+.hours dd { margin: 0; font-family: var(--font-item); font-weight: 600; font-size: 16px; color: var(--gold); font-variant-numeric: tabular-nums; text-align: right; }
+.hours dd.closed { color: var(--muted); }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
@@ -138,6 +153,15 @@ footer.note { color: var(--muted); font-size: 12px; text-align: center; padding-
   <div class="wrap">
     <h1>BARDOCK</h1>
     <p>Cardápio · Bebidas &amp; Narguile</p>
+    <section class="hours" aria-labelledby="hours-title">
+      <h2 id="hours-title">Horário de funcionamento</h2>
+      <dl>
+        <dt>Segunda</dt><dd class="closed">Fechado</dd>
+        <dt>Terça a quinta</dt><dd>18h às 0h</dd>
+        <dt>Sexta e sábado</dt><dd>18h às 2h</dd>
+        <dt>Domingo</dt><dd>16h às 23h</dd>
+      </dl>
+    </section>
   </div>
 </header>
 
